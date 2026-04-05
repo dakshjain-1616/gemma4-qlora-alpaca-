@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" width="860" height="340" font-family="monospace, sans-serif">
+
+  <!-- Background -->
+  <rect width="860" height="340" rx="12" fill="#0d1117"/>
+
+  <!-- Title -->
+  <text x="430" y="32" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="bold">QLoRA Fine-tuning Pipeline — gemma-4-E2B-it</text>
+
+  <!-- === Box 1: Dataset === -->
+  <rect x="30" y="60" width="150" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="105" y="85" text-anchor="middle" fill="#79c0ff" font-size="11" font-weight="bold">DATASET</text>
+  <text x="105" y="103" text-anchor="middle" fill="#e6edf3" font-size="10">Alpaca</text>
+  <text x="105" y="118" text-anchor="middle" fill="#8b949e" font-size="9">4,500 train</text>
+  <text x="105" y="131" text-anchor="middle" fill="#8b949e" font-size="9">500 test</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="180" y1="100" x2="225" y2="100" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- === Box 2: Tokenizer === -->
+  <rect x="225" y="60" width="150" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="300" y="85" text-anchor="middle" fill="#79c0ff" font-size="11" font-weight="bold">TOKENIZER</text>
+  <text x="300" y="103" text-anchor="middle" fill="#e6edf3" font-size="10">gemma-4-E2B-it</text>
+  <text x="300" y="118" text-anchor="middle" fill="#8b949e" font-size="9">Alpaca prompt</text>
+  <text x="300" y="131" text-anchor="middle" fill="#8b949e" font-size="9">template applied</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="375" y1="100" x2="420" y2="100" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- === Box 3: Base Model (quantized) === -->
+  <rect x="420" y="50" width="170" height="100" rx="8" fill="#161b22" stroke="#f78166" stroke-width="1.5"/>
+  <text x="505" y="75" text-anchor="middle" fill="#f78166" font-size="11" font-weight="bold">BASE MODEL</text>
+  <text x="505" y="92" text-anchor="middle" fill="#e6edf3" font-size="10">gemma-4-E2B-it</text>
+  <text x="505" y="108" text-anchor="middle" fill="#8b949e" font-size="9">4-bit NF4 quantized</text>
+  <text x="505" y="122" text-anchor="middle" fill="#8b949e" font-size="9">Frozen weights</text>
+  <text x="505" y="136" text-anchor="middle" fill="#8b949e" font-size="9">~2B eff. params</text>
+
+  <!-- === LoRA Adapter box (below base model) === -->
+  <rect x="420" y="175" width="170" height="100" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="505" y="200" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">LoRA ADAPTERS</text>
+  <text x="505" y="217" text-anchor="middle" fill="#e6edf3" font-size="10">r=16, alpha=32</text>
+  <text x="505" y="233" text-anchor="middle" fill="#8b949e" font-size="9">q/k/v/o_proj</text>
+  <text x="505" y="248" text-anchor="middle" fill="#8b949e" font-size="9">gate/up/down_proj</text>
+  <text x="505" y="263" text-anchor="middle" fill="#8b949e" font-size="9">Trainable only</text>
+
+  <!-- Vertical connector base model ↔ LoRA -->
+  <line x1="505" y1="150" x2="505" y2="175" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Arrow 3→4 -->
+  <line x1="590" y1="100" x2="640" y2="100" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- === Box 4: Training Loop === -->
+  <rect x="640" y="60" width="180" height="80" rx="8" fill="#161b22" stroke="#d2a8ff" stroke-width="1.5"/>
+  <text x="730" y="85" text-anchor="middle" fill="#d2a8ff" font-size="11" font-weight="bold">TRAINING LOOP</text>
+  <text x="730" y="102" text-anchor="middle" fill="#e6edf3" font-size="10">Cross-entropy loss</text>
+  <text x="730" y="117" text-anchor="middle" fill="#8b949e" font-size="9">Gradient → LoRA only</text>
+  <text x="730" y="131" text-anchor="middle" fill="#8b949e" font-size="9">Metrics tracked live</text>
+
+  <!-- Arrow 4→5 down -->
+  <line x1="730" y1="140" x2="730" y2="185" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- === Box 5: Outputs === -->
+  <rect x="640" y="185" width="180" height="90" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="730" y="208" text-anchor="middle" fill="#58a6ff" font-size="11" font-weight="bold">OUTPUTS</text>
+  <text x="730" y="225" text-anchor="middle" fill="#e6edf3" font-size="10">LoRA adapter .bin</text>
+  <text x="730" y="241" text-anchor="middle" fill="#8b949e" font-size="9">checkpoints/</text>
+  <text x="730" y="256" text-anchor="middle" fill="#8b949e" font-size="9">hf_exports/</text>
+  <text x="730" y="270" text-anchor="middle" fill="#8b949e" font-size="9">(HuggingFace format)</text>
+
+  <!-- === Metrics sidebar === -->
+  <rect x="30" y="185" width="370" height="90" rx="8" fill="#161b22" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="215" y="207" text-anchor="middle" fill="#e3b341" font-size="11" font-weight="bold">METRICS TRACKED</text>
+  <text x="80" y="227" text-anchor="middle" fill="#e6edf3" font-size="10">Per-layer grad norms</text>
+  <text x="215" y="227" text-anchor="middle" fill="#e6edf3" font-size="10">LoRA weight magnitudes</text>
+  <text x="340" y="227" text-anchor="middle" fill="#e6edf3" font-size="10">Training loss</text>
+  <text x="215" y="248" text-anchor="middle" fill="#8b949e" font-size="9">Logged per step — used to monitor adapter health and convergence</text>
+  <text x="215" y="265" text-anchor="middle" fill="#8b949e" font-size="9">during the active run</text>
+
+  <!-- Arrow defs -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+
+  <!-- Footer -->
+  <text x="430" y="318" text-anchor="middle" fill="#484f58" font-size="9">Built with NEO — heyneo.so</text>
+</svg>
