@@ -9,6 +9,8 @@
 
 ## 🔄 Training in Progress
 
+<img src="assets/training_progress.svg" alt="Training Progress Status" width="100%">
+
 > **Notice:** This training run is currently active. All architecture and configuration details below are final. The Results section will be updated automatically once training completes.
 
 | Field | Status |
@@ -66,6 +68,8 @@ All base model weights are **frozen**. Only the injected LoRA matrices (rank-16 
 ---
 
 ## Training Setup
+
+<img src="assets/qlora_config.svg" alt="QLoRA Configuration" width="100%">
 
 ### Quantization
 

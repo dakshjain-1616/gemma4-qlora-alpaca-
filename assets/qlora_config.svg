@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="220" viewBox="0 0 700 220">
+  <defs>
+    <style>
+      .font-base { font-family: 'Segoe UI', system-ui, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="220" fill="#0d1117" rx="8"/>
+
+  <!-- Title bar -->
+  <text x="350" y="26" text-anchor="middle" class="font-base" font-size="11" fill="#8b949e" letter-spacing="0.08em">QLORA CONFIGURATION — gemma-4-E2B-it</text>
+
+  <!-- Left panel: Model Config -->
+  <rect x="12" y="38" width="330" height="170" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <!-- Left header -->
+  <rect x="12" y="38" width="330" height="30" rx="8" fill="#1f2937"/>
+  <rect x="12" y="56" width="330" height="12" fill="#1f2937"/>
+  <text x="177" y="58" text-anchor="middle" class="font-base" font-size="12" font-weight="700" fill="#f0f6fc">Model Configuration</text>
+
+  <!-- Model config rows — 28px row height -->
+  <!-- Row 1 -->
+  <text x="28" y="90" class="font-base" font-size="12" fill="#8b949e">Base Model</text>
+  <rect x="155" y="75" width="175" height="22" rx="5" fill="#1a0f2e"/>
+  <text x="242" y="90" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#bf91f9">gemma-4-E2B-it</text>
+
+  <!-- Row 2 -->
+  <text x="28" y="118" class="font-base" font-size="12" fill="#8b949e">Quantization</text>
+  <rect x="155" y="103" width="175" height="22" rx="5" fill="#0f2b1a"/>
+  <text x="242" y="118" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#3fb950">4-bit NF4</text>
+
+  <!-- Row 3 -->
+  <text x="28" y="146" class="font-base" font-size="12" fill="#8b949e">Compute dtype</text>
+  <rect x="155" y="131" width="175" height="22" rx="5" fill="#0f2b1a"/>
+  <text x="242" y="146" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#3fb950">bfloat16</text>
+
+  <!-- Row 4 -->
+  <text x="28" y="174" class="font-base" font-size="12" fill="#8b949e">Device</text>
+  <rect x="155" y="159" width="175" height="22" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="242" y="174" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#79c0ff">cuda</text>
+
+  <!-- Row 5 -->
+  <text x="28" y="202" class="font-base" font-size="12" fill="#8b949e">Base weights</text>
+  <rect x="155" y="187" width="175" height="22" rx="5" fill="#2b1a0f"/>
+  <text x="242" y="202" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#d29922">Frozen</text>
+
+  <!-- Right panel: LoRA Config -->
+  <rect x="358" y="38" width="330" height="170" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <!-- Right header -->
+  <rect x="358" y="38" width="330" height="30" rx="8" fill="#1a0f2e"/>
+  <rect x="358" y="56" width="330" height="12" fill="#1a0f2e"/>
+  <text x="523" y="58" text-anchor="middle" class="font-base" font-size="12" font-weight="700" fill="#f0f6fc">LoRA Configuration</text>
+
+  <!-- LoRA rows -->
+  <!-- Row 1: rank -->
+  <text x="374" y="90" class="font-base" font-size="12" fill="#8b949e">Rank (r)</text>
+  <rect x="490" y="75" width="185" height="22" rx="5" fill="#1a0f2e"/>
+  <text x="582" y="90" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#bf91f9">16</text>
+
+  <!-- Row 2: alpha -->
+  <text x="374" y="118" class="font-base" font-size="12" fill="#8b949e">Alpha</text>
+  <rect x="490" y="103" width="185" height="22" rx="5" fill="#1a0f2e"/>
+  <text x="582" y="118" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#bf91f9">32  (scale 2.0×)</text>
+
+  <!-- Row 3: dropout -->
+  <text x="374" y="146" class="font-base" font-size="12" fill="#8b949e">Dropout</text>
+  <rect x="490" y="131" width="185" height="22" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="582" y="146" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#f0f6fc">0.05</text>
+
+  <!-- Row 4: target modules — needs wider badge with smaller text -->
+  <text x="374" y="174" class="font-base" font-size="12" fill="#8b949e">Modules (7)</text>
+  <rect x="490" y="159" width="185" height="22" rx="5" fill="#0f2b1a"/>
+  <text x="582" y="174" text-anchor="middle" class="font-base" font-size="10" font-weight="600" fill="#3fb950">q/k/v/o/gate/up/down_proj</text>
+
+  <!-- Row 5: trainable -->
+  <text x="374" y="202" class="font-base" font-size="12" fill="#8b949e">Trainable params</text>
+  <rect x="490" y="187" width="185" height="22" rx="5" fill="#0f2b1a"/>
+  <text x="582" y="202" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#3fb950">LoRA matrices only</text>
+</svg>
