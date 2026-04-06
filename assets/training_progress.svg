@@ -21,13 +21,11 @@
 
   <!-- Progress bar section -->
   <text x="24" y="50" class="font-base" font-size="12" fill="#8b949e">Overall Progress</text>
-  <text x="676" y="50" text-anchor="end" class="font-base" font-size="12" font-weight="700" fill="#d29922">0%  ⏳</text>
+  <text x="676" y="50" text-anchor="end" class="font-base" font-size="12" font-weight="700" fill="#3fb950">100% ✓</text>
   <!-- Bar track -->
   <rect x="24" y="56" width="652" height="16" rx="8" fill="#21262d"/>
-  <!-- Striped empty bar to indicate "running but 0%" -->
-  <rect x="24" y="56" width="652" height="16" rx="8" fill="url(#stripes)"/>
-  <!-- Start cap glow -->
-  <rect x="24" y="56" width="8" height="16" rx="4" fill="#6f42c1" opacity="0.8"/>
+  <!-- Filled gradient bar -->
+  <rect x="24" y="56" width="652" height="16" rx="8" fill="url(#pgBar)" opacity="0.9"/>
 
   <!-- Status rows — 3 rows, 30px apart -->
   <!-- Row 1: Data Prep DONE -->
@@ -44,13 +42,14 @@
   <rect x="480" y="122" width="180" height="20" rx="5" fill="#238636" opacity="0.25"/>
   <text x="570" y="136" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#3fb950">COMPLETE</text>
 
-  <!-- Row 3: Full Training RUNNING -->
-  <rect x="24" y="152" width="652" height="28" rx="6" fill="#1c1408" stroke="#d29922" stroke-width="1"/>
-  <text x="48" y="171" class="font-base" font-size="13" fill="#d29922">⏳</text>
+  <!-- Row 3: Full Training DONE -->
+  <rect x="24" y="152" width="652" height="28" rx="6" fill="#0f2b1a"/>
+  <text x="48" y="171" class="font-base" font-size="13" fill="#3fb950">✓</text>
   <text x="70" y="171" class="font-base" font-size="13" font-weight="600" fill="#f0f6fc">Full Training</text>
-  <rect x="480" y="156" width="180" height="20" rx="5" fill="#d29922" opacity="0.2"/>
-  <text x="570" y="170" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#d29922">RUNNING...</text>
+  <text x="280" y="171" class="font-base" font-size="11" fill="#8b949e">1,125 steps · 1 epoch · loss 31.49→31.43 · 156MB adapter</text>
+  <rect x="480" y="156" width="180" height="20" rx="5" fill="#238636" opacity="0.25"/>
+  <text x="570" y="170" text-anchor="middle" class="font-base" font-size="11" font-weight="600" fill="#3fb950">COMPLETE</text>
 
   <!-- Bottom footnote -->
-  <text x="350" y="196" text-anchor="middle" class="font-base" font-size="11" fill="#8b949e">4500 Alpaca samples  ·  3 epochs  ·  RTX A6000 48GB</text>
+  <text x="350" y="196" text-anchor="middle" class="font-base" font-size="11" fill="#8b949e">4,500 Alpaca samples · 1 epoch · 1,125 steps · bfloat16 · CUDA</text>
 </svg>
